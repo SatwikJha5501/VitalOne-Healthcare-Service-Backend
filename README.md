@@ -1,105 +1,78 @@
-#VitalOne - Healthcare Management System
-#VitalOne is a comprehensive healthcare management system built with Spring Boot that handles appointments, prescriptions, medicine inventory, and user management for a university healthcare facility.
+# VitalOne - Healthcare Management System
 
-##🚀 Features
-#User Management: Student registration and approval system
+VitalOne is a comprehensive healthcare management system built with Spring Boot that handles appointments, prescriptions, medicine inventory, and user management for a university healthcare facility.
 
-#Appointment System: Book and manage medical appointments
+## 🚀 Features
 
-#Appointment Requests: Request appointments with preferred doctors and times
+- **User Management**: Student registration and approval system
+- **Appointment System**: Book and manage medical appointments
+- **Appointment Requests**: Request appointments with preferred doctors and times
+- **Doctor Management**: Doctor profiles with specialization and availability
+- **Prescription Management**: Digital prescription system with medication tracking
+- **Medicine Inventory**: Complete medicine stock management with expiry tracking
+- **REST API**: Full CRUD operations for all entities
 
-#Doctor Management: Doctor profiles with specialization and availability
+## 🛠️ Technology Stack
 
-#Prescription Management: Digital prescription system with medication tracking
+- **Backend**: Spring Boot 3.x
+- **Database**: MySQL
+- **ORM**: Hibernate/JPA
+- **Validation**: Jakarta Validation
+- **Build Tool**: Maven
 
-#Medicine Inventory: Complete medicine stock management with expiry tracking
+## 📋 Prerequisites
 
-#REST API: Full CRUD operations for all entities
+- Java 17 or higher
+- MySQL Server 8.0+
+- Maven 3.6+
+- Postman (for API testing)
 
-##🛠️ Technology Stack
-#Backend: Spring Boot 3.x
+## 🌐 API Endpoints
 
-#Database: MySQL
+### User Management
+- `GET /api/users` - Get all users
+- `GET /api/users/{id}` - Get user by ID
+- `POST /api/users` - Create new user
+- `PUT /api/users` - Update user
+- `DELETE /api/users/{id}` - Delete user
 
-#ORM: Hibernate/JPA
+### Appointment Management
+- `GET /api/appointments` - Get all appointments
+- `GET /api/appointments/{id}` - Get appointment by ID
+- `POST /api/appointments` - Create new appointment
+- `PUT /api/appointments` - Update appointment
+- `DELETE /api/appointments/{id}` - Delete appointment
 
-#Validation: Jakarta Validation
+### Appointment Request Management
+- `GET /api/appointment-requests` - Get all appointment requests
+- `GET /api/appointment-requests/{id}` - Get request by ID
+- `POST /api/appointment-requests` - Create new request
+- `PUT /api/appointment-requests` - Update request
+- `PATCH /api/appointment-requests/{id}` - Partial update request
+- `DELETE /api/appointment-requests/{id}` - Delete request
 
-#Build Tool: Maven
+### Medicine Management
+- `GET /api/medicines` - Get all medicines
+- `GET /api/medicines/{id}` - Get medicine by ID
+- `POST /api/medicines` - Create new medicine
+- `PUT /api/medicines` - Update medicine
+- `DELETE /api/medicines/{id}` - Delete medicine
 
-##📋 Prerequisites
-#Java 17 or higher
+### Prescription Management
+- `GET /api/prescriptions` - Get all prescriptions
+- `GET /api/prescriptions/{id}` - Get prescription by ID
+- `POST /api/prescriptions` - Create new prescription
+- `PUT /api/prescriptions` - Update prescription
+- `DELETE /api/prescriptions/{id}` - Delete prescription
 
-#MySQL Server 8.0+
+## 📱 Postman API Examples
 
-#Maven 3.6+
+### Create User
+```http
+POST http://localhost:8080/api/users
+Content-Type: application/json
 
-#Postman (for API testing)
-
-##🌐 API Endpoints
-#User Management
-GET /api/users - Get all users
-
-GET /api/users/{id} - Get user by ID
-
-POST /api/users - Create new user
-
-PUT /api/users - Update user
-
-DELETE /api/users/{id} - Delete user
-
-#Appointment Management
-GET /api/appointments - Get all appointments
-
-GET /api/appointments/{id} - Get appointment by ID
-
-POST /api/appointments - Create new appointment
-
-PUT /api/appointments - Update appointment
-
-DELETE /api/appointments/{id} - Delete appointment
-
-#Appointment Request Management
-GET /api/appointment-requests - Get all appointment requests
-
-GET /api/appointment-requests/{id} - Get request by ID
-
-POST /api/appointment-requests - Create new request
-
-PUT /api/appointment-requests - Update request
-
-PATCH /api/appointment-requests/{id} - Partial update request
-
-DELETE /api/appointment-requests/{id} - Delete request
-
-#Medicine Management
-GET /api/medicines - Get all medicines
-
-GET /api/medicines/{id} - Get medicine by ID
-
-POST /api/medicines - Create new medicine
-
-PUT /api/medicines - Update medicine
-
-DELETE /api/medicines/{id} - Delete medicine
-
-#Prescription Management
-GET /api/prescriptions - Get all prescriptions
-
-GET /api/prescriptions/{id} - Get prescription by ID
-
-POST /api/prescriptions - Create new prescription
-
-PUT /api/prescriptions - Update prescription
-
-DELETE /api/prescriptions/{id} - Delete prescription
-
-##📱 Postman API Examples
-#Create User
-#POST http://localhost:8080/api/users
-#Content-Type: application/json
-
-###{
+{
     "sapId": "500083168",
     "firstName": "Neelam",
     "lastName": "Bahnu",
@@ -109,9 +82,10 @@ DELETE /api/prescriptions/{id} - Delete prescription
     "email": "500083168@stu.upes.ac.in",
     "mobileNumber": "8309224251"
 }
+```
 
-Create Appointment
-
+### Create Appointment
+```http
 POST http://localhost:8080/api/appointments
 Content-Type: application/json
 
@@ -124,10 +98,10 @@ Content-Type: application/json
     "diagnosis": "Food poisoning",
     "notes": "Prescribed medication and light diet"
 }
+```
 
-Create Medicine 
-
-
+### Create Medicine
+```http
 POST http://localhost:8080/api/medicines
 Content-Type: application/json
 
@@ -145,9 +119,10 @@ Content-Type: application/json
     "uses": "Treatment of mild to moderate COVID-19 infection",
     "sideEffects": "Increased uric acid, diarrhea, liver enzyme abnormalities"
 }
+```
 
-Create Appointment Request
-
+### Create Appointment Request
+```http
 POST http://localhost:8080/api/appointment-requests
 Content-Type: application/json
 
@@ -159,9 +134,10 @@ Content-Type: application/json
     "preferredDoctor": "Dr. Mohammad Ahsan",
     "additionalNotes": "Unable to bear weight on injured ankle"
 }
+```
 
-Create Prescription 
-
+### Create Prescription
+```http
 POST http://localhost:8080/api/prescriptions
 Content-Type: application/json
 
@@ -173,42 +149,42 @@ Content-Type: application/json
     "dosage": "Amoxicillin: 5ml every 12 hours, Ibuprofen: 2.5ml every 6 hours as needed for fever",
     "instructions": "Shake well before use. Complete entire antibiotic course. Use measuring spoon provided, not household spoon."
 }
+```
 
-📝 Entity Relationships
-User can have multiple Appointments and AppointmentRequests
+## 📝 Entity Relationships
 
-Doctor can be associated with multiple Appointments
+- User can have multiple Appointments and AppointmentRequests
+- Doctor can be associated with multiple Appointments
+- Prescription links User and Doctor with medication details
+- Medicine is managed independently in inventory
 
-Prescription links User and Doctor with medication details
+## 🎯 Status Enums
 
-Medicine is managed independently in inventory
+### Appointment Status
+- `PENDING`, `CONFIRMED`, `COMPLETED`, `CANCELLED`, `NO_SHOW`
 
-🎯 Status Enums
-Appointment Status
-PENDING, CONFIRMED, COMPLETED, CANCELLED, NO_SHOW
+### Appointment Request Status
+- `PENDING`, `APPROVED`, `REJECTED`, `CANCELLED`
 
-Appointment Request Status
-PENDING, APPROVED, REJECTED, CANCELLED
+### User Status
+- `PENDING`, `APPROVED`, `UNAPPROVED`
 
-User Status
-PENDING, APPROVED, UNAPPROVED
+### Medicine Type
+- `TABLET`, `CAPSULE`, `SYRUP`, `INJECTION`, `OINTMENT`, `DROPS`, `INHALER`, `OTHER`
 
-Medicine Type
-TABLET, CAPSULE, SYRUP, INJECTION, OINTMENT, DROPS, INHALER, OTHER
+## 🤝 Contributing
 
-🤝 Contributing
-Fork the project
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+## 📄 License
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
-
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-👥 Authors
+## 👥 Authors
+
 UPZEN Team - Initial work
+
