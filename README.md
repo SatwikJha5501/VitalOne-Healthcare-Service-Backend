@@ -1,4 +1,4 @@
-###VitalOne - Healthcare Management System
+#VitalOne - Healthcare Management System
 #VitalOne is a comprehensive healthcare management system built with Spring Boot that handles appointments, prescriptions, medicine inventory, and user management for a university healthcare facility.
 
 ##🚀 Features
