@@ -184,7 +184,7 @@ Content-Type: application/json
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👥 Authors
+## 👥 Author
 
-UPZEN Team - Initial work
+Satwik Jha
 
